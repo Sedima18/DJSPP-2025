@@ -1,35 +1,50 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+/**
+ * App.jsx
+ * Root component of the React Podcast App.
+ * Wraps the application with PodcastProvider and renders core UI sections.
+ */
 
-function App() {
-  const [count, setCount] = useState(0)
+import React from "react";
+import { PodcastProvider } from "./context/PodcastContext";
+import PodcastGrid from "./components/PodcastGrid";
+import FilterDropdown from "./components/FilterDropdown";
+import SortDropdown from "./components/SortDropdown";
+import Pagination from "./components/Pagination";
+import SearchBar from "./components/SearchBar";
+import "./App.css";
+
+/**
+ * Main application component.
+ * @returns {JSX.Element}
+ */
+const App = () => {
+  const handleApply = () => {
+    // Optional: trigger any action when clicking the Apply button
+    // e.g., refresh search/filter/sort results
+    console.log("Apply button clicked");
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <PodcastProvider>
+      <div className="min-h-screen bg-gray-100 p-6">
+        <header className="text-center mb-8">
+          <h1 className="text-3xl font-bold mb-4"> Podcast App</h1>
 
-export default App
+          {/* Controls container */}
+          <div className="controls">
+            <SearchBar />
+            <FilterDropdown />
+            <SortDropdown />
+          </div>
+        </header>
+
+        <main>
+          <PodcastGrid />
+          <Pagination />
+        </main>
+      </div>
+    </PodcastProvider>
+  );
+};
+
+export default App;
