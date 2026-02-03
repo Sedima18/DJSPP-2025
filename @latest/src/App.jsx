@@ -1,50 +1,39 @@
-/**
- * App.jsx
- * Root component of the React Podcast App.
- * Wraps the application with PodcastProvider and renders core UI sections.
- */
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import React from "react";
-import { PodcastProvider } from "./context/PodcastContext";
-import PodcastGrid from "./components/PodcastGrid";
-import FilterDropdown from "./components/FilterDropdown";
-import SortDropdown from "./components/SortDropdown";
-import Pagination from "./components/Pagination";
-import SearchBar from "./components/SearchBar";
-import "./App.css";
+// Pages (routes)
+import Home from "./pages/Home.jsx";
+import ShowDetail from "./pages/ShowDetail";
+import Favourites from "./pages/Favourites";
+import NotFound from "./pages/NotFound";
 
-/**
- * Main application component.
- * @returns {JSX.Element}
- */
-const App = () => {
-  const handleApply = () => {
-    // Optional: trigger any action when clicking the Apply button
-    // e.g., refresh search/filter/sort results
-    console.log("Apply button clicked");
-  };
+// Components
+import AudioPlayer from "./components/AudioPlayer";
 
+// Context providers
+import { AudioProvider } from "./context/AudioContext";
+import { FavouritesProvider } from "./context/FavouritesContext";
+import { ThemeProvider } from "./context/ThemeContext";
+
+function App() {
   return (
-    <PodcastProvider>
-      <div className="min-h-screen bg-gray-100 p-6">
-        <header className="text-center mb-8">
-          <h1 className="text-3xl font-bold mb-4"> Podcast App</h1>
+    <ThemeProvider>
+      <AudioProvider>
+        <FavouritesProvider>
+          <Router>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/show/:id" element={<ShowDetail />} />
+              <Route path="/favourites" element={<Favourites />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
 
-          {/* Controls container */}
-          <div className="controls">
-            <SearchBar />
-            <FilterDropdown />
-            <SortDropdown />
-          </div>
-        </header>
-
-        <main>
-          <PodcastGrid />
-          <Pagination />
-        </main>
-      </div>
-    </PodcastProvider>
+            {/* Global audio player stays mounted */}
+            <AudioPlayer />
+          </Router>
+        </FavouritesProvider>
+      </AudioProvider>
+    </ThemeProvider>
   );
-};
+}
 
 export default App;
