@@ -1,10 +1,10 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 // Pages (routes)
-import Home from "./pages/Home.jsx";
-import ShowDetail from "./pages/ShowDetail";
-import Favourites from "./pages/Favourites";
-import NotFound from "./pages/NotFound";
+import Home from "./app/Home";
+import ShowDetail from "./app/ShowDetails";
+import Favourites from "./app/Favourites";
+import NotFound from "./app/NotFound";
 
 // Components
 import AudioPlayer from "./components/AudioPlayer";
