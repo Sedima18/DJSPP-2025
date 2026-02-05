@@ -1,16 +1,9 @@
-import { useContext } from "react";
-import { FavouritesContext } from "../context/FavouritesContext";
-
 const Favourites = () => {
-  const { favourites } = useContext(FavouritesContext);
-
   return (
-    <>
+    <main>
       <h1>Favourites</h1>
-      {favourites.map((fav) => (
-        <p key={fav.id}>{fav.title}</p>
-      ))}
-    </>
+      <p>No favourites yet.</p>
+    </main>
   );
 };
 

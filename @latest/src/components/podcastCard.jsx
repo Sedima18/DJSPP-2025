@@ -1,8 +1,13 @@
 import { Link } from "react-router-dom";
-import { genreMap } from "../utils/GenreMap";
+import { genreMap } from "../utils/genreMap";
 
 const PodcastCard = ({ podcast }) => {
-  const genres = podcast.genres.map((g) => genreMap[g]).join(" • ");
+  if (!podcast) return null;
+
+  const genres = podcast.genres
+    ?.map((g) => genreMap[g])
+    .filter(Boolean)
+    .join(" • ");
 
   return (
     <Link to={`/show/${podcast.id}`} className="podcast-card">
