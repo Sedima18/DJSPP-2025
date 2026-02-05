@@ -130,6 +130,22 @@ main {
   font-size: 0.9rem;
 }
 
+* Season selector */
+.season-selector {
+  margin-top: 1rem;
+}
+
+.season-selector label {
+  margin-right: 0.5rem;
+  font-weight: bold;
+}
+
+.season-selector select {
+  padding: 0.3rem 0.5rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
 /* ----------------------------------- */
 /* Responsive adjustments              */
 /* ----------------------------------- */
