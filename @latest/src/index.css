@@ -82,6 +82,62 @@ h2, h3, h4 {
   line-height: 1.4;
 }
 
+.podcast-card-content .description {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+.podcast-card-content .genres {
+  font-size: 0.8rem;
+  color: #888;
+  margin-bottom: 0.3rem;
+}
+
+.podcast-card-content .updated {
+  font-size: 0.8rem;
+  color: #aaa;
+}
+
+.podcast-card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.podcast-card:hover {
+  transform: translateY(-4px);
+}
+
+.podcast-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.podcast-card-content {
+  padding: 1rem;
+}
+
+.podcast-card-content .title {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.podcast-card-content .seasons,
+.podcast-card-content .genres,
+.podcast-card-content .updated {
+  font-size: 0.8rem;
+  color: #555;
+  margin-bottom: 0.3rem;
+}
+
+
 /* =========================
    SHOW DETAIL PAGE
    ========================= */
