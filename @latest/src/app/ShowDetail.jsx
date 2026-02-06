@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { fetchShowById } from "../utils/api"; 
+import { fetchShowById } from "../utils/api";
 import { genreMap } from "../utils/genreMap";
+import ThemeToggle from "../components/ThemeToggle";
 import "../index.css";
 
 const ShowDetail = () => {
@@ -17,7 +18,10 @@ const ShowDetail = () => {
       try {
         const data = await fetchShowById(id);
         setShow(data);
-        if (data.seasons?.length > 0) setSelectedSeason(data.seasons[0]); // default first season
+
+        if (data.seasons?.length > 0) {
+          setSelectedSeason(data.seasons[0]); // default to first season
+        }
       } catch (err) {
         setError(err.message);
       } finally {
@@ -42,19 +46,31 @@ const ShowDetail = () => {
 
   return (
     <main>
+      {/*  Theme Toggle visible on Show Detail */}
+      <header className="show-detail-header">
+        <ThemeToggle />
+      </header>
+
       <div className="show-detail">
-        {show.image && <img src={show.image} alt={show.title} />}
+        {show.image && (
+          <img src={show.image} alt={show.title} />
+        )}
+
         <div className="show-info">
           <h1>{show.title}</h1>
           <p>{show.description}</p>
+
           {genreNames.length > 0 && (
             <p>
               <strong>Genres:</strong> {genreNames.join(" • ")}
             </p>
           )}
+
           <p>
-            <strong>Number of Seasons:</strong> {show.seasons?.length || 0}
+            <strong>Number of Seasons:</strong>{" "}
+            {show.seasons?.length || 0}
           </p>
+
           <p>
             <strong>Last updated:</strong> {updatedDate}
           </p>
@@ -84,13 +100,16 @@ const ShowDetail = () => {
         </div>
       </div>
 
-      {/* Episodes of selected season */}
+      {/* Episodes for selected season */}
       {selectedSeason && (
         <div className="season">
-          <h2>{selectedSeason.title} - Episodes</h2>
+          <h2>{selectedSeason.title} – Episodes</h2>
+
           {selectedSeason.episodes?.map((ep) => (
             <div className="episode" key={ep.id}>
-              {ep.image && <img src={ep.image} alt={ep.title} />}
+              {ep.image && (
+                <img src={ep.image} alt={ep.title} />
+              )}
               <p>{ep.title}</p>
             </div>
           ))}
