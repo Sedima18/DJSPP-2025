@@ -278,6 +278,30 @@ body {
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.6);
 }
 
+
+/* ==========================
+   THEME VARIABLES
+========================== */
+:root {
+  --bg-color: #fff;
+  --text-color: #111;
+  --card-bg: #f5f5f5;
+  --card-border: #ddd;
+  --button-bg: #111;
+  --button-color: #fff;
+}
+
+body.dark {
+  --bg-color: #121212;
+  --text-color: #f5f5f5;
+  --card-bg: #1e1e1e;
+  --card-border: #333;
+  --button-bg: #f5f5f5;
+  --button-color: #111;
+}
+
+
+
 /* ----------------------------------- */
 /* Responsive adjustments              */
 /* ----------------------------------- */
