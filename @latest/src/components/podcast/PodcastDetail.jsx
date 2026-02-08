@@ -28,7 +28,7 @@ and local component state to create an interactive, data-driven
 
 import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { AudioPlayerContext } from "../../context/AudioPlayercontext.jsx";
+import { AudioPlayerContext } from "../../context/AudioPlayerContext.jsx";
 import { FavouritesContext } from "../../context/FavouritesContext.jsx";
 import { formatDate } from "../../utils/FormatDate.js";
 import GenreTags from "../UI/GenreTags.jsx";

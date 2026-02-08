@@ -1,9 +1,9 @@
 import { Routes, Route } from "react-router-dom";
 import Header from "./components/UI/Header.jsx";
 import Home from "./pages/Home.jsx";
-import ShowDetail from "./pages/ShowDetails.jsx";
+import ShowDetail from "./pages/ShowDetail.jsx";
 import { PodcastProvider } from "./context/PodcastContext.jsx";
-import { AudioPlayerProvider } from "./context/AudioPlayercontext.jsx";
+import { AudioPlayerProvider } from "./context/AudioPlayerContext.jsx";
 import AudioPlayerBar from "./components/UI/AudioPlayerBar.jsx";
 import { FavouritesProvider } from "./context/FavouritesContext.jsx";
 import Favourites from "./pages/Favourites.jsx";
