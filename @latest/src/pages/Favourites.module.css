@@ -16,12 +16,12 @@
 .filtersRow {
   display: flex;
   gap: 12px;
-  flex-wrap: wrap; /* <-- THIS FIXES MOBILE OVERFLOW */
+  flex-wrap: wrap; 
   width: 100%;
 }
 
 .sortSelect {
-  flex: 1; /* <-- auto-fit on mobile */
+  flex: 1; 
   min-width: 140px;
   padding: 0.5rem 0.75rem;
   border: 1px solid #ccc;
@@ -73,7 +73,7 @@
 }
 
 /* ============================================
-   📱 RESPONSIVE FIXES
+    RESPONSIVE FIXES
 ============================================ */
 
 @media (max-width: 700px) {
