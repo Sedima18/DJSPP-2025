@@ -1,6 +1,6 @@
 import React, { useContext, useState, useMemo } from "react";
 import { FavouritesContext } from "../context/FavouritesContext";
-import EpisodeCard from "../components/Podcast/EpisodeCard";
+import EpisodeCard from "../components/podcast/EpisodeCard";
 import styles from "./Favourites.module.css";
 
 /**
