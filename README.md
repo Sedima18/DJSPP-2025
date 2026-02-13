@@ -110,9 +110,6 @@ Vercel for
 project-root/
 ├── node_modules/
 ├── public/
-│   ├── image.png
-│   ├── Podcast-Favicon.svg
-│   ├── Preview_image.png
 │   └── vite.svg
 ├── src/
 │   ├── api/
