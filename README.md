@@ -4,6 +4,20 @@ A polished, production-ready React podcast platform with global audio playback, 
 
 ## 🚀 Features
 
+Fixed bottom global audio player
+
+Continues playback across page navigation
+
+Play, pause, seek, progress tracking
+
+Reload confirmation prompt while audio is playing
+
+Built using HTML5 Audio API + React Context
+
+State persists until page refresh
+
+Smooth UI transitions
+
 ## 🔊 Global Audio Player
 
 Fixed bottom global audio player
