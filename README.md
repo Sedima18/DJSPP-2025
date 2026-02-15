@@ -1,64 +1,83 @@
-## 🎧 Final Podcast App 🎯
-A polished, production-ready React podcast platform with global audio playback, favourites, themes, routing, and rich UI enhancements. The Dynamic Podcast App is a modern, responsive podcast platform built with React. Users can explore podcasts, view seasons and episodes, play audio with a persistent global player, save favourites, toggle themes, and enjoy a smooth and engaging browsing experience.
+## 🎧 Dynamic Podcast App ##
+
+A modern, responsive podcast platform built with React. Explore podcasts, view seasons and episodes, play audio with a persistent global player, save favourites, toggle themes, and enjoy a smooth, engaging browsing experience.
+
+## ✅ Live Demo: View on Vercel
+The app automatically deploys on Vercel after each push to GitHub.
+
+Live app: https://sedmoh-24033-pto-2503-group-a-mohal-mu.vercel.app/
 
 
 ## 🚀 Features
+🌐 SPA & Routing
 
-Fixed bottom global audio player
+Fully single-page application (SPA) using React Router
 
-Continues playback across page navigation
+Smooth navigation between pages without reloading
 
-Play, pause, seek, progress tracking
+Automatic routing for show details and favourites
 
-Reload confirmation prompt while audio is playing
+🔊 Global Audio Player
 
-Built using HTML5 Audio API + React Context
+Fixed bottom player accessible on all pages
 
-State persists until page refresh
+Play, pause, seek, and track progress
 
-Smooth UI transitions
+Audio continues across page navigation
 
-## 🔊 Global Audio Player
+Reload confirmation prompt when audio is playing
 
-Fixed bottom global audio player
-
-Continues playback across page navigation
-
-Play, pause, seek, progress tracking
-
-Reload confirmation prompt while audio is playing
-
-Built using HTML5 Audio API + React Context
-
-State persists until page refresh
+Built with HTML5 Audio API and React Context
 
 Smooth UI transitions
 
 ## ❤️ Favourites System
-Favourites are persisted with localStorage and support:
 
-✅ Add/remove favourite episodes
+Persisted using localStorage
 
-✅ Favourites page
+Add/remove favourite episodes
 
-✅ Show the show title, season, and date/time added
+Dedicated Favourites page
 
-✅ Visual heart icon feedback
+Displays show title, season, and date/time added
 
-✅ Group favourites by show
+Visual heart icon feedback
 
-✅ Sorting options:
+Group favourites by show
 
-A–Z/ Z–A
+Sort options: A–Z / Z–A, Newest / Oldest
 
-Newest / Oldest by date added
+## 🎨 Theme Toggle
 
-## Recommended Shows Carousel
+Light/Dark theme switcher
+
+Saved in localStorage
+
+Instant theme updates across the app
+
+Accessible color contrast
+
+Dynamic sun/moon icons
+
+## 🔍 Podcast Browsing
+
+Filterable and searchable list of shows
+
+Sort by categories
+
+Clear, responsive preview cards
+
+Genre tags and pagination
+
+Show & Episode views with play buttons
+
+Progress indicator in the global audio player
+
+## 🎠 Recommended Shows Carousel
+
 Horizontally scrollable carousel
 
-Swipe navigation
-
-Arrow navigation
+Arrow and swipe navigation
 
 Looped scrolling
 
@@ -66,49 +85,13 @@ Displays show image, title, and genres
 
 Clicking a show navigates to its detail page
 
-Built with lightweight carousel handling
+## $ Technologies Used
 
-## 🌗 Theme Toggle (Light/Dark Mode)
-Dark/light theme switcher
-
-Saved in localStorage
-
-Entire app updates instantly
-
-Uses CSS Modules with theme-aware variables
-
-Sun/moon icon changes dynamically
-
-Accessible color contrast
-
-## 🔍 Podcast Browsing
-Filterable and searchable list of shows
-
-Sort by categories
-
-Clear preview cards
-
-Genre tags
-
-Pagination support
-
-📺 Show & Episode Views
-Show title, description, genres
-
-Total seasons and total episodes
-
-Sort and view episodes per season
-
-Click to play episodes
-
-Progress indicator in audio player
-
-## 🛠️ Technologies Used
 React (component-based UI)
 
 React Router (SPA routing)
 
-Context API (global audio + theme + favourites)
+Context API (global audio, theme, favourites)
 
 HTML5 Audio API
 
@@ -118,10 +101,9 @@ JavaScript ES6+
 
 Node.js + npm
 
-Vercel for
+Vercel for deployment
 
 ## 📦 Project Structure
-
 project-root/
 ├── node_modules/
 ├── public/
@@ -129,69 +111,25 @@ project-root/
 ├── src/
 │   ├── api/
 │   ├── components/
-│   │   ├── Filters/
-│   │   │   ├── GenreFilter.jsx
-│   │   │   ├── GenreFilter.module.css
-│   │   │   ├── SearchBar.jsx
-│   │   │   ├── SearchBar.module.css
-│   │   │   ├── SortSelect.jsx
-│   │   │   ├── SortSelect.module.css
-│   │   │   └── index.js
-│   │   ├── Podcast/
-│   │   │   ├── EpisodeCard.jsx
-│   │   │   ├── EpisodeCard.module.css
-│   │   │   ├── PodcastCard.jsx
-│   │   │   ├── PodcastCard.module.css
-│   │   │   ├── PodcastDetail.jsx
-│   │   │   ├── PodcastDetail.module.css
-│   │   │   ├── PodcastGrid.jsx
-│   │   │   ├── PodcastGrid.module.css
-│   │   │   └── index.js
-│   │   ├── UI/
-│   │   │   ├── AudioPlayerBar.jsx
-│   │   │   ├── AudioPlayerBar.module.css
-│   │   │   ├── Error.jsx
-│   │   │   ├── GenreTags.jsx
-│   │   │   ├── GenreTags.module.css
-│   │   │   ├── Header.jsx
-│   │   │   ├── Header.module.css
-│   │   │   ├── Loading.jsx
-│   │   │   ├── Loading.module.css
-│   │   │   ├── Pagination.jsx
-│   │   │   ├── Pagination.module.css
-│   │   │   ├── Carousel.jsx
-│   │   │   ├── carousel.module.css
-│   │   │   └── index.js
+│   │   ├── Filters/ (GenreFilter, SearchBar, SortSelect)
+│   │   ├── Podcast/ (EpisodeCard, PodcastCard, PodcastDetail, PodcastGrid)
+│   │   ├── UI/ (AudioPlayerBar, Carousel, Header, Loading, Pagination, GenreTags)
 │   │   └── index.js
-│   ├── context/
-│   │   ├── AudioPlayerContext.jsx
-│   │   ├── FavouritesContext.jsx
-│   │   ├── PodcastContext.jsx
-│   │   └── ThemeContext.jsx
-│   ├── pages/
-│   │   ├── Favourites.jsx
-│   │   ├── Favourites.module.css
-│   │   ├── Home.jsx
-│   │   ├── Home.module.css
-│   │   ├── ShowDetails.jsx
-│   │   └── ShowDetails.module.css
-│   ├── utils/
-│   │   └── formatDate.js
+│   ├── context/ (AudioPlayerContext, FavouritesContext, PodcastContext, ThemeContext)
+│   ├── pages/ (Favourites, Home, ShowDetails)
+│   ├── utils/ (formatDate.js)
 │   ├── App.jsx
 │   ├── data.js
 │   ├── index.css
-│   ├── main.jsx
+│   └── main.jsx
 ├── .gitignore
-├── .eslintrc.config.js
-├── index.html
-├── package-lock.json
 ├── package.json
+├── package-lock.json
 ├── README.md
 └── vite.config.js
 
-
-## ⚙️ Setup Instructions
-✅ Prerequisites
+⚙️ Setup Instructions
+Prerequisites
 
 Node.js 14+
 
@@ -201,15 +139,22 @@ A browser
 
 Code editor (VS Code recommended)
 
-✅ Install and Run Locally
-
+Install & Run Locally
 # 1. Clone the repo
-git clone 
+git clone https://github.com/Sedima18/SEDMOH24033_PTO2503_Group-A-Mohale-DJSPP-2025.git
 
 # 2. Navigate into the project
 cd @latest
-# 3. Install dependencies:
+
+# 3. Install dependencies
 npm install
-# 4. Run development server:
+
+# 4. Run development server
 npm run dev
-🌐 Deployment
+
+Deployment
+
+The app automatically deploys on Vercel after each push to GitHub.
+
+Live app: https://sedmoh-24033-pto-2503-group-a-mohal-mu.vercel.app/
+
